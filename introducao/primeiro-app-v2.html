@@ -1,0 +1,40 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <input type="text" v-on:input="alterarTitulo">
+    <p>{{ title }}</p>
+</div>
+
+<div id="app2">
+    <input type="text" v-on:input="alterarTitulo">
+    <p>{{ title }}</p>
+</div>
+
+<script>
+
+new Vue({
+    el: '#app',
+    data: {
+        title: "Usando VueJS 2!"
+    },
+    methods: {
+        alterarTitulo: function(event) {
+            this.title = event.target.value;
+        }
+    }
+})
+
+// Esse exemplo é o mesmo do acima, apenas mostrando uma forma diferente de escrever os métodos de um objeto VueJS2
+new Vue({
+    el: '#app2',
+    data: {
+        title: "Usando VueJS 2!"
+    },
+    methods: {
+        alterarTitulo(event) {
+            this.title = event.target.value;
+        }
+    }
+})
+
+</script>
